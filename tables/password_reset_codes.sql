@@ -1,0 +1,6 @@
+CREATE TABLE password_reset_codes(
+    id SERIAL PRIMARY KEY,
+    code VARCHAR(255),
+    email VARCHAR(255) UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

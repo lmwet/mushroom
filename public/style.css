@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css?family=Dokdo&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+div#splash {
+    max-height: 20vh;
+}
+img#banner-img {
+    max-width: 25vw;
+}
+h1,
+h2,
+h3 {
+    font-size: 4em;
+    font-family: "Dokdo", "Courier", "Helvetica Neue", "Lato", "Segoe UI",
+        Helvetica, Arial, sans-serif;
+    /* color: #b116ac; */
+    color: #e53935;
+    text-align: center;
+}
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-attachment: fixed;
+}
+main {
+    display: block;
+    text-align: center;
+    margin-bottom: 5%;
+}
+#header {
+    min-height: 10vh;
+    width: 100vw;
+    flex-direction: row;
+    align-content: space-between;
+    background-image: radial-gradient(#fafafa 20%, transparent 20%);
+    background-color: #e53935;
+    background-position: 0 0, 50px 50px;
+    background-size: 30px 30px;
+}
+#header .link {
+    margin: 2%;
+    color: white;
+    font-size: 3em;
+    text-decoration: none;
+    font-family: "Dokdo", "Courier", "Helvetica Neue", "Lato", "Segoe UI",
+        Helvetica, Arial, sans-serif;
+}
+a {
+    font-size: 25px;
+    text-decoration: none;
+    font-family: "Dokdo", "Courier", "Helvetica Neue", "Lato", "Segoe UI",
+        Helvetica, Arial, sans-serif;
+    color: #e53935;
+}
+img {
+    margin: 10px;
+}
+img#icon-pic {
+    max-height: 8vh;
+    float: right;
+    align-self: flex-end;
+    border: dashed white 2px;
+    border-radius: 50%;
+}
+img#logo-pic {
+    max-height: 8vh;
+    float: left;
+    align-self: flex-start;
+}
+input {
+    display: block;
+    margin: 20px;
+    padding: 1.2 em;
+}
+input#bio-editor {
+    display: inline-block;
+    padding: 4%;
+}
+#modal {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+#modal-card {
+    align-self: center;
+    min-height: 20vh;
+    min-width: 30vw;
+    background-color: antiquewhite;
+    color: #e53935;
+}
+#upload-img-btn {
+    z-index: 50;
+    height: 30px;
+    margin: 5%;
+}
+#modal-close {
+    float: right;
+    color: black;
+    font-size: 40px;
+    cursor: pointer;
+}
+#profile-pic {
+    cursor: pointer;
+    max-width: 15vw;
+    align-self: center;
+}
+input[name="find-person"],
+input[name="open-finder"] {
+    position: absolute;
+    border: dashed white 2px;
+    background: #e53935;
+    text-align: center;
+    font-size: large;
+    color: white;
+    height: 5vh;
+    margin: 5px;
+    left: 15%;
+}
+
+button {
+    border: solid white 1px;
+    background: #e53935;
+    text-align: center;
+    font-size: large;
+    color: white;
+    height: 5vh;
+    cursor: pointer;
+}
+div#accepted,
+div#wannabes {
+    margin-bottom: 3%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+div.friend-card {
+    margin: 2%;
+}
+div.msg-container {
+    border: #e53935 solid 1px;
+    box-shadow: 2px 5px #e53935;
+    height: 600px;
+    overflow-y: scroll;
+    text-align: center;
+    width: 80%;
+    margin-left: 5%;
+}
+textarea#text {
+    width: 80%;
+    margin: 5%;
+}
+button#send {
+    margin-left: 15px;
+}
+img.msg-pic {
+    border: #e53935 solid 1px;
+    box-shadow: 2px 5px #e53935;
+    border-radius: 50%;
+    max-width: 60px;
+}
+div.message-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+div.wall-container {
+    border: rgb(172, 172, 172) solid 1px;
+    box-shadow: 2px 5px rgb(172, 172, 172);
+    height: 600px;
+    overflow-y: scroll;
+    text-align: center;
+    width: 80%;
+    margin-left: 5%;
+}
