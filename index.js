@@ -14,8 +14,8 @@ const s3 = require("./s3");
 const conf = require("./config.json");
 const server = require("http").Server(app); //returns a native node object server, because socket io requires a native node server to handle the "handshake", cant use an express app
 const io = require("socket.io")(server, {
-    origins: "https://mushrooom.herokuapp.com",
-}); //this is an interface to socket io on the interface, we pass the native node server to the function, "origins": space seperated list of hosts or "origins" that we can accept websocket connections from. so the socket req will have a header of this origin, if it doesnt match it, socket io will refuse it. Prevents csrf attacks. to deploy, you will have to add the url of your site on herokuapp.com:*  and :* to accept all ports
+    origins: "https://mushrooom.herokuapp.com :*",
+}); //this is an interface to socket io, on the interface, we pass the native node server to the function, "origins": space seperated list of hosts or "origins" that we can accept websocket connections from. so the socket req will have a header of this origin, if it doesnt match it, socket io will refuse it. Prevents csrf attacks. to deploy, you will have to add the url of your site on herokuapp.com:*  and :* to accept all ports
 
 const diskStorage = multer.diskStorage({
     destination: function (req, file, callback) {
@@ -437,7 +437,7 @@ app.post("/delete", async (req, res) => {
 });
 
 //now the native node http server is handling the socket handshakes, which express cant do
-server.listen(8080, function () {
+server.listen(process.env.PORT || 8080, function () {
     //server will send all the non-websocket requests to app
     console.log("I'm listening.");
 });
