@@ -21,7 +21,7 @@ export default function Header(props) {
     return (
         <React.Fragment>
             <div id="header">
-                <img id="logo-pic" src="/images/logoBAM.png" alt="logo" />
+                <img id="logo-pic" src="/images/oyster.png" alt="logo" />
                 <Link className="link" to="/users">
                     Find people
                 </Link>
@@ -39,7 +39,7 @@ export default function Header(props) {
                         id="icon-pic"
                         src={props.imgUrl || "/images/default.png"}
                         alt={props.firstName + " " + props.lastName}
-                    />
+                    />{" "}
                 </Link>
             </div>
         </React.Fragment>

@@ -15,7 +15,7 @@ const store = createStore(
     composeWithDevTools(applyMiddleware(reduxPromise))
 );
 
-let elem = <img id="banner-img" src="/images/logoBAM.png" />;
+let elem = <img id="banner-img" src="/images/oyster.png" />;
 
 // look at url and know if user is logged in or not
 if (location.pathname == "/welcome") {

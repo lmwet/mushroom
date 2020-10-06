@@ -19,8 +19,6 @@ export default class App extends React.Component {
     }
 
     componentDidMount() {
-        console.log("this in app", this);
-
         //get route to /
         axios
             .get("/first")
@@ -36,6 +34,7 @@ export default class App extends React.Component {
             .catch(function (err) {
                 console.log("err in get /", err);
             });
+        console.log("this in app after setstaite inaxios", this);
     }
 
     toggleModal() {

@@ -3,9 +3,7 @@
 * {
     box-sizing: border-box;
 }
-body {
-    margin: 0;
-}
+
 div#splash {
     max-height: 20vh;
 }
@@ -16,19 +14,21 @@ h1,
 h2,
 h3 {
     font-size: 4em;
-    font-family: "Dokdo", "Courier", "Helvetica Neue", "Lato", "Segoe UI",
-        Helvetica, Arial, sans-serif;
-    /* color: #b116ac; */
-    color: #e53935;
+    font-family: "Courier", "Helvetica Neue", "Lato", "Segoe UI", Helvetica,
+        Arial, sans-serif;
+    color: #537895;
     text-align: center;
 }
 body {
-    font-family: "Source Sans Pro", sans-serif;
+    font-family: "Courier", "Helvetica Neue", "Lato", "Segoe UI", Helvetica,
+        Arial, sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-attachment: fixed;
+    background-color: #734ae8;
+    background-image: linear-gradient(315deg, #734ae8 0%, #89d4cf 74%);
+    background-size: 100%;
 }
 main {
     display: block;
@@ -36,29 +36,35 @@ main {
     margin-bottom: 5%;
 }
 #header {
-    min-height: 10vh;
+    max-height: 4vh;
     width: 100vw;
+    /* position: fixed; */
+    top: 20px;
+    left: 0;
     flex-direction: row;
     align-content: space-between;
-    background-image: radial-gradient(#fafafa 20%, transparent 20%);
-    background-color: #e53935;
-    background-position: 0 0, 50px 50px;
-    background-size: 30px 30px;
+    background-color: #537895;
+    background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+    margin-bottom: 5%;
 }
 #header .link {
+    line-height: 50px;
+    margin-top: 4%;
     margin: 2%;
-    color: white;
-    font-size: 3em;
+    color: #c9e6fc;
+    background-color: #5378958e;
+    padding: 0.6em;
+    font-size: 2em;
     text-decoration: none;
-    font-family: "Dokdo", "Courier", "Helvetica Neue", "Lato", "Segoe UI",
-        Helvetica, Arial, sans-serif;
+    font-family: "Courier", "Helvetica Neue", "Lato", "Segoe UI", Helvetica,
+        Arial, sans-serif;
 }
 a {
     font-size: 25px;
     text-decoration: none;
-    font-family: "Dokdo", "Courier", "Helvetica Neue", "Lato", "Segoe UI",
-        Helvetica, Arial, sans-serif;
-    color: #e53935;
+    font-family: "Courier", "Helvetica Neue", "Lato", "Segoe UI", Helvetica,
+        Arial, sans-serif;
+    color: #537895;
 }
 img {
     margin: 10px;
@@ -67,13 +73,18 @@ img#icon-pic {
     max-height: 8vh;
     float: right;
     align-self: flex-end;
-    border: dashed white 2px;
+    border: #380036, solid 1px;
     border-radius: 50%;
 }
 img#logo-pic {
-    max-height: 8vh;
+    max-height: 10vh;
     float: left;
     align-self: flex-start;
+    background-color: #5378958e;
+    margin-top: 2vh;
+}
+#other-profile-pic {
+    max-height: 15vh;
 }
 input {
     display: block;
@@ -104,8 +115,9 @@ input#bio-editor {
     align-self: center;
     min-height: 20vh;
     min-width: 30vw;
-    background-color: antiquewhite;
-    color: #e53935;
+    background-color: #734ae8;
+    background-image: linear-gradient(315deg, #734ae8 0%, #89d4cf 74%);
+    color: rgb(60, 60, 107);
 }
 #upload-img-btn {
     z-index: 50;
@@ -122,26 +134,28 @@ input#bio-editor {
     cursor: pointer;
     max-width: 15vw;
     align-self: center;
+    margin-top: 5%;
 }
 input[name="find-person"],
 input[name="open-finder"] {
     position: absolute;
-    border: dashed white 2px;
-    background: #e53935;
+    border: #380036, solid 1px;
+    box-shadow: 2px 5px #380036;
+    background-color: aliceblue;
     text-align: center;
     font-size: large;
-    color: white;
+    color: rgb(60, 60, 107);
     height: 5vh;
     margin: 5px;
     left: 15%;
 }
 
 button {
-    border: solid white 1px;
-    background: #e53935;
+    border: #380036, solid 1px;
+    box-shadow: 2px 5px #380036;
     text-align: center;
     font-size: large;
-    color: white;
+    color: rgb(60, 60, 107);
     height: 5vh;
     cursor: pointer;
 }
@@ -158,24 +172,22 @@ div.friend-card {
     margin: 2%;
 }
 div.msg-container {
-    border: #e53935 solid 1px;
-    box-shadow: 2px 5px #e53935;
+    border: #380036, solid 1px;
+    box-shadow: 2px 5px #380036;
     height: 600px;
     overflow-y: scroll;
     text-align: center;
     width: 80%;
-    margin-left: 5%;
+    margin-left: 10%;
 }
 textarea#text {
     width: 80%;
-    margin: 5%;
+    margin: 5% 10%;
 }
 button#send {
     margin-left: 15px;
 }
 img.msg-pic {
-    border: #e53935 solid 1px;
-    box-shadow: 2px 5px #e53935;
     border-radius: 50%;
     max-width: 60px;
 }
@@ -183,10 +195,11 @@ div.message-div {
     display: flex;
     flex-direction: row;
     justify-content: start;
+    margin-left: 5%;
 }
 div.wall-container {
-    border: rgb(172, 172, 172) solid 1px;
-    box-shadow: 2px 5px rgb(172, 172, 172);
+    border: #380036, solid 1px;
+    box-shadow: 2px 5px #380036;
     height: 600px;
     overflow-y: scroll;
     text-align: center;

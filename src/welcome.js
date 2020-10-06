@@ -12,10 +12,7 @@ export default class Welcome extends React.Component {
         return (
             <div id="splash">
                 <h1>Welcome to MushRoom</h1>
-                <img
-                    id="banner-img"
-                    src="https://www.onlygfx.com/wp-content/uploads/2018/01/grunge-paw-print-1-980x1024.png"
-                />
+                <img id="banner-img" src="/images/oyster.png" />
 
                 <HashRouter>
                     <div>

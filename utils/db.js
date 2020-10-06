@@ -9,6 +9,7 @@ exports.addUser = (first, last, email, password) => {
     const q = `INSERT into users (first, last, email, password)
     VALUES ($1, $2, $3, $4)
     RETURNING *`;
+    console.log(q);
     const params = [first, last, email, password];
     return db.query(q, params);
 };

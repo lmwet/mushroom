@@ -14,9 +14,8 @@ const s3 = require("./s3");
 const conf = require("./config.json");
 const server = require("http").Server(app); //returns a native node object server, because socket io requires a native node server to handle the "handshake", cant use an express app
 const io = require("socket.io")(server, {
-    origins: "https://mushrooom.herokuapp.com :*",
-}); //this is an interface to socket io, on the interface, we pass the native node server to the function, "origins": space seperated list of hosts or "origins" that we can accept websocket connections from. so the socket req will have a header of this origin, if it doesnt match it, socket io will refuse it. Prevents csrf attacks. to deploy, you will have to add the url of your site on herokuapp.com:*  and :* to accept all ports
-
+    origins: "https://mushrooom.herokuapp.com:*",
+});
 const diskStorage = multer.diskStorage({
     destination: function (req, file, callback) {
         callback(null, __dirname + "/uploads");
@@ -79,7 +78,7 @@ if (process.env.NODE_ENV != "production") {
 
 /////////////////////////////////////////////////////////////////////////// LOGED IN ROUTES ///////////////////////////////////////////////////////////////////////////
 
-//get to homepage
+//get to wall / self-space
 app.get("/first", async (req, res) => {
     const email = req.session.user.email;
     console.log("req.session", req.session);
@@ -87,7 +86,7 @@ app.get("/first", async (req, res) => {
         const userData = await db.getUser(email);
         res.json(userData.rows[0]);
     } catch (e) {
-        console.log("err in get /");
+        console.log("err in get /first");
     }
 });
 
@@ -97,8 +96,9 @@ app.get("/logout", async (req, res) => {
         req.session = null;
         console.log("req.session", req.session);
         res.redirect("/welcome#");
+        console.log("redirected to /welcome#");
     } catch (e) {
-        console.log("err in get /");
+        console.log("err in get /logout");
     }
 });
 
@@ -281,7 +281,7 @@ app.get("/friends.json", async (req, res) => {
 /////////////////////////////////////////////////////////// LOGED OUT USER ROUTES //////////////////////////////////////////////////////////////////////////////////
 
 app.get("/welcome", function (req, res) {
-    // console.log("csrfSecret: ", req.session.csrfSecret);
+    console.log("req.session.user: ", req.session.user);
     if (!req.session.user) {
         res.sendFile(__dirname + "/index.html");
     } else {
@@ -308,7 +308,7 @@ app.post("/register", function (req, res) {
                 .then((data) => {
                     req.session.user = {};
                     req.session.user.email = data.rows[0].email;
-                    req.session.user.userId = data.rows[0].id; // AUFPASSEN I changed to camel case here!!!
+                    req.session.user.userId = data.rows[0].id;
                     req.session.user.first = data.rows[0].first;
                     req.session.user.last = data.rows[0].last;
                     res.json({ success: true });
@@ -374,7 +374,7 @@ app.post("/password/reset/start", (req, res) => {
             //send it in an email
             ses.sendEmail(
                 "lea.colson@gmail.com",
-                "Social damm media here!",
+                "Message from Mushroom!",
                 secretCode
             )
                 .then(() => {
@@ -441,6 +441,8 @@ server.listen(process.env.PORT || 8080, function () {
     //server will send all the non-websocket requests to app
     console.log("I'm listening.");
 });
+
+///////////////// sockets routes /////////////////
 
 io.on("connection", (socket) => {
     console.log(`socket with the id ${socket.id} is now connected`);
