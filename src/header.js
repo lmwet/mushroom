@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "./axios";
 
 export default function Header(props) {
-    // either u write props or the properties names themselves in {}
-    console.log("props in header", props);
-
     const handleClick = () => {
         console.log("handleclick logout");
 
