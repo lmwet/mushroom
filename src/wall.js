@@ -39,7 +39,7 @@ export default function Wall(props) {
             <h3>
                 {props.firstName} {props.lastName}'s wall
             </h3>
-            <div className="wall-container" ref={elemRef}>
+            <div className="msg-container" ref={elemRef}>
                 {wallMessages &&
                     wallMessages.map((msg, index) => {
                         return (
