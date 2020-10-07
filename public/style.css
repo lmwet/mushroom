@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Dokdo&display=swap");
-
 * {
     box-sizing: border-box;
 }
@@ -158,6 +156,7 @@ button {
     color: rgb(60, 60, 107);
     height: 5vh;
     cursor: pointer;
+    margin: 1%;
 }
 div#accepted,
 div#wannabes {
