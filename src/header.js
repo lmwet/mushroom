@@ -4,8 +4,6 @@ import axios from "./axios";
 
 export default function Header(props) {
     const handleClick = () => {
-        console.log("handleclick logout");
-
         (async () => {
             try {
                 const { data } = await axios.post(`/logout`);
@@ -18,7 +16,11 @@ export default function Header(props) {
     return (
         <React.Fragment>
             <div id="header">
-                <img id="logo-pic" src="/images/oyster.png" alt="logo" />
+                <img
+                    id="logo-pic"
+                    src="/images/oyster.png"
+                    alt="oyster-mushroom"
+                />
                 <Link className="link" to="/users">
                     Find people
                 </Link>
