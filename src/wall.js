@@ -13,13 +13,11 @@ export default function Wall(props) {
     }, [wallMessages]);
 
     const keyCheck = async (e) => {
-        // console.log("value", e.target.value);
-        // console.log("value", e.key);
         if (e.key == "Enter") {
-            e.preventDefault(); // prevent line down
+            e.preventDefault(); // prevents line down
 
             socket.emit("postedWallMsg", e.target.value);
-            e.target.value = ""; //CLEARING!
+            e.target.value = "";
         }
     };
 
@@ -28,11 +26,6 @@ export default function Wall(props) {
         socket.emit("postedWallMsg", text.value);
         text.value = "";
     };
-
-    // var messagesText = document
-    //     .querySelectorAll("#message")
-    //     .querySelectorAll('meta[property="og:title"]')[0];
-    // console.log("metaTitle", metaTitle);
 
     return (
         <React.Fragment>

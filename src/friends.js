@@ -65,7 +65,10 @@ export default function Friends() {
                         return (
                             <div className="friend-card" key={elem.id}>
                                 <Link to={`/user/${elem.id}`}>
-                                    <img src={elem.url} />
+                                    <img
+                                        className="profile-pic"
+                                        src={elem.url}
+                                    />
                                 </Link>
                                 <Link to={`/user/${elem.id}`}>
                                     <p>

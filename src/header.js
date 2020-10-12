@@ -36,7 +36,7 @@ export default function Header(props) {
                         id="icon-pic"
                         src={props.imgUrl || "/images/default.png"}
                         alt={props.firstName + " " + props.lastName}
-                    />{" "}
+                    />
                 </Link>
             </div>
         </React.Fragment>

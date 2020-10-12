@@ -91,7 +91,7 @@ export default function FindPeople() {
                     {searchResult.map((elem) => {
                         return (
                             <div key={elem.id}>
-                                <img src={elem.url} />
+                                <img id="profile-pic" src={elem.url} />
                                 <Link to={`/user/${elem.id}`}>
                                     <p>
                                         {elem.first} {elem.last}
