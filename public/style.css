@@ -41,7 +41,7 @@ main {
     left: 0;
     flex-direction: row;
     align-content: space-between;
-    background-color: #537895;
+    background-color: #734ae8;
     background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
     margin-bottom: 5%;
 }
