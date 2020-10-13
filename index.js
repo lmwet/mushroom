@@ -14,7 +14,10 @@ const s3 = require("./s3");
 const conf = require("./config.json");
 const server = require("http").Server(app); //returns a native node object server, because socket io requires a native node server to handle the "handshake", cant use an express app
 const io = require("socket.io")(server, {
-    origins: "https://mushrooom.herokuapp.com:*",
+    origins:
+        process.env.NODE_ENV != "production"
+            ? "http://localhost:8080"
+            : "https://mushrooom.herokuapp.com:*",
 });
 const diskStorage = multer.diskStorage({
     destination: function (req, file, callback) {
