@@ -8,7 +8,7 @@ export async function receiveFriends() {
 
     return {
         type: "RECEIVE_FRIENDS",
-        friends: data,
+        friends: data ? data : [],
     };
 }
 

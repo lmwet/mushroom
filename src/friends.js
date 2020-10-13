@@ -22,8 +22,8 @@ export default function Friends() {
             state.friends.filter((friend) => friend.accepted == false)
     );
 
-    if (!friends) {
-        console.log("are we in if no friends?");
+    if (friends.length === 0) {
+        console.log("friends.length", friends.length);
 
         return (
             <p>
