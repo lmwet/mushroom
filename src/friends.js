@@ -22,9 +22,7 @@ export default function Friends() {
             state.friends.filter((friend) => friend.accepted == false)
     );
 
-    if (friends.length === 0) {
-        console.log("friends.length", friends.length);
-
+    if (!friends || friends.length === 0) {
         return (
             <p>
                 Visit <Link to={`/users`}>Find People</Link> to make friends
